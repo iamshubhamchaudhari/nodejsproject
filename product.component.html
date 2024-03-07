@@ -1,0 +1,18 @@
+<!-- product.component.html -->
+<div>
+    <input type="text" [(ngModel)]="newProductName" placeholder="New Product Name">
+    <select [(ngModel)]="categoryId">
+      <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+    </select>
+    <button (click)="createProduct()">Create Product</button>
+  </div>
+  
+  <div *ngFor="let product of products">
+    <span>{{ product.productId }}</span>
+    <span>{{ product.productName }}</span>
+    <span>{{ product.categoryName }}</span>
+    <span>{{ product.categoryId }}</span>
+    <button (click)="updateProduct(product.productId, product.productName, categoryId)">Update</button>
+    <button (click)="deleteProduct(product.productId)">Delete</button>
+  </div>
+  
