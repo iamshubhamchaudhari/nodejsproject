@@ -1,0 +1,10 @@
+<div>
+  <input type="text" [(ngModel)]="newCategoryName" placeholder="New Category Name">
+  <button (click)="createCategory()">Create Category</button>
+</div>
+
+<div *ngFor="let category of categories">
+  <input type="text" [(ngModel)]="category.categoryName">
+  <button (click)="updateCategory(category.categoryId, category.categoryName)">Update</button>
+  <button (click)="deleteCategory(category.categoryId)">Delete</button>
+</div>
